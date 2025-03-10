@@ -1,0 +1,28 @@
+from json import dumps
+
+# Abre archivo con manejo de excepción
+try:
+    
+    # Crea archivo my_data.txt
+    #file=open('C:\\Users\\samae\\Documents\\docencia-uq\\I-2025\\Programming\\slides\\lecture-1-sources\\my_data.txt','xt')
+    file=open('My_DaTa.tXt','x')
+
+
+# Solicita datos al usuario
+    name=input('Ingrese su nombre: ')
+    id=int(input('Ingrese su cédula: '))
+
+    data={"name":name,"id":id}
+
+    # Escribe el texto en el archivo
+    file.write(dumps(data)+"\n")
+
+    # Cierra el archivo
+    file.close()
+
+except:
+    # El bloque except se ejecuta si hay 
+    # excepción, el archivo ya existe
+    print('El archivo ya existe')
+
+
